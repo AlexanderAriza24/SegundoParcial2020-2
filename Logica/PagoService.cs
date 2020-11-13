@@ -45,6 +45,20 @@ namespace Logica
             prueba.TipoPago = pago.TipoPago;
             return prueba;
         }
+
+        public int Total(string tipoPago)
+        {
+            int total =0;
+            List<Pago> pagos = _context.Pagos.ToList();
+            foreach(Pago pago in pagos)
+            {
+                if(String.Equals(pago.TipoPago, tipoPago))
+                {
+                    total +=pago.ValorPago;
+                }
+            }
+            return total;
+        }
     }
 
     public class GuardarPagoResponse 

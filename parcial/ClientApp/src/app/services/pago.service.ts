@@ -34,4 +34,12 @@ export class PagoService {
               catchError(this.handleErrorService.handleError<Pago>('Registrar Pago', null))
           );
     }
+
+    totalPago(tipo: string): Observable<number> {
+      return this.http.get<number>(this.baseUrl + 'api/Total/' + tipo)
+          .pipe(
+              tap(_ => this.handleErrorService.log('datos enviados')),
+              catchError(this.handleErrorService.handleError<number>('Total Pagos', null))
+          );
+    }
 }

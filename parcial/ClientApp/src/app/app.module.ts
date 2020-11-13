@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TerceroService } from './services/tercero.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
+import { FiltroPagosPipe } from './pipe/filtro-pagos.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     TerceroRegistroComponent,
     PagoRegistroComponent,
     PagoConsultaComponent,
-    AlertModalComponent
+    AlertModalComponent,
+    FiltroPagosPipe
   ],
   imports: [
     ReactiveFormsModule,

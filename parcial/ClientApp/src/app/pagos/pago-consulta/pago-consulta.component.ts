@@ -10,13 +10,21 @@ import { Pago } from '../models/pago';
 export class PagoConsultaComponent implements OnInit {
 
   pagos: Pago[];
+  searchText: string;
+  totalGastos: number;
   constructor(private pagoService: PagoService) { }
 
   ngOnInit(){
 
-    /*this.pagoService.get().subscribe(result => {
+    this.pagoService.get().subscribe(result => {
       this.pagos = result;
-    });*/
+    });
+  }
+
+  cambio(){
+    this.pagoService.totalPago(this.searchText).subscribe(r => {
+      this.totalGastos = r;
+    });
   }
 
 }

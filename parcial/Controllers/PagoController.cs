@@ -26,6 +26,13 @@ namespace parcial.Controllers
             return pagos;
         }
 
+        [HttpGet("{tipoPago}")]
+        public ActionResult<int> TotalPago(string tipoPago)
+        {
+            var total = _pagoService.Total(tipoPago);
+            return total;
+        }
+
         // POST: api/Pago
         [HttpPost]
         public ActionResult<PagoViewModel> Post(PagoInputModel pagoInput)

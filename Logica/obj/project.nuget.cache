@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "TQcjdncw3eyyu/usMVIAOg4h3/QPSq8Jd9DVC3TYhb5MoAbTSobanb7AYHP4OL2zV3EN7gdsHAXE3AMyP+FtGg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AlexAC\\Documents\\Ejercicios VS Code\\Proyectos2020-2\\SegundoParcial2020-2\\Logica\\Logica.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

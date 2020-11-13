@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xMBAfboQtnT6oerajbcNRuTdALOh8/VR1rLYjzfzzruWRi1RTBOZTkg/lZOv+pWRvL4L5S4G3XFtY72edB0kOA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AlexAC\\Documents\\Ejercicios VS Code\\Proyectos2020-2\\SegundoParcial2020-2\\Entity\\Entity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

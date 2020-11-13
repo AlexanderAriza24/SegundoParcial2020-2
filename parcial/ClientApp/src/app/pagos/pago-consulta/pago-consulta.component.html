@@ -1,0 +1,27 @@
+<div class="row">
+        <div class="col-6">
+          <!--<input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">-->
+        </div>
+      </div>
+      <hr>
+      
+      <table class="table table-striped" *ngIf='pagos && pagos.length'>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tipo Pago</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Valor PAgo</th>
+            <th scope="col">Valor IVA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pago of pagos; index as i ">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ pago.tipoPAgo }} </td>
+            <td>{{ pago.fecha }}</td>
+            <td>{{ pago.valorPago }}</td>
+            <td>{{ pago.valorIva }}</td>
+          </tr>
+        </tbody>
+      </table>

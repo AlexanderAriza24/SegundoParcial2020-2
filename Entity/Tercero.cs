@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entity
 {
     public class Tercero
     {
+        [Key]
         public string Identificacion { get; set; }
         public string TipoDocumento { get; set; }
         public string Nombre { get; set; }

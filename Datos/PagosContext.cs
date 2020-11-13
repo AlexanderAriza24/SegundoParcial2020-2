@@ -2,7 +2,8 @@
 
 namespace Datos
 {
-    public class Class1
+    public class PagosContext
     {
+        
     }
 }

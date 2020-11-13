@@ -1,1 +1,81 @@
-<p>pago-registro works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Registro de Pagos</h2>
+            <br><br>
+        </div>
+        <div class="col-12">
+            <form class="form-inline">
+                <div class="mx-sm-3">
+                    <label>Consultar Tercero</label>
+                </div>
+                <div class="form-group mx-sm-3">
+                    <input type="text" class="form-control" name="consultar" [(ngModel)]="searchText" placeholder="Consultar">
+                </div>
+                <div>
+                    <button class="btn btn-primary mr-1" (click)="consultar()">Consultar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <br><br>
+            <form [formGroup]="formGroup">
+
+                <div class="form-group">
+                    <label>Identificación del Tercero</label>
+                    <input class="form-control" type="text" name="identificación" formControlName="identificación" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Codigo del Pago</label>
+                    <input type="text" class="form-control" name="codigo" formControlName="codigo"
+                    [ngClass]="{ 'is-invalid':  control.codigo.touched && control.codigo.errors }" >
+                    <div *ngIf=" control.codigo.errors" class="invalid-feedback">
+                        <div *ngIf="control.codigo.errors.required">El Codigo es requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de Pago</label>
+                    <input type="text" class="form-control" name="tipoPago" formControlName="tipoPago"
+                    [ngClass]="{ 'is-invalid':  control.tipoPago.touched && control.tipoPago.errors }" >
+                    <div *ngIf=" control.tipoPago.errors" class="invalid-feedback">
+                        <div *ngIf="control.tipoPago.errors.required">El Tipo de Pago es requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label >Fecha:</label>
+                    <input type="date" class="form-control"
+                     formControlName="fecha" [ngClass]="{'is-invalid':  control.fecha.touched && control.fecha.errors}">
+                    <div *ngIf="control.fecha.errors" class="invalid-feedback">
+                        <div *ngIf="control.fecha.errors.required">Se require la fecha del pago</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Valor del Pago</label>
+                    <input type="number" class="form-control" name="valorPago" formControlName="valorPago"
+                    [ngClass]="{ 'is-invalid':  control.valorPago.touched && control.valorPago.errors }" >
+                    <div *ngIf=" control.valorPago.errors" class="invalid-feedback">
+                        <div *ngIf="control.valorPago.errors.required">El Valor del Pago es requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Valor del IVA</label>
+                    <input type="number" class="form-control" name="valorIva" formControlName="valorIva"
+                    [ngClass]="{ 'is-invalid':  control.valorIva.touched && control.valorIva.errors }" >
+                    <div *ngIf=" control.valorIva.errors" class="invalid-feedback">
+                        <div *ngIf="control.valorIva.errors.required">El Valor del IVA es requerido</div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1" (click)="onSubmit()" [disabled]="formGroup.invalid">Registrar</button>
+                    <button class="btn btn-secondary" type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

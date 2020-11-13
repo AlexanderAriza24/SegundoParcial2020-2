@@ -14,9 +14,9 @@ export class PagoConsultaComponent implements OnInit {
 
   ngOnInit(){
 
-    this.pagoService.get().subscribe(result => {
+    /*this.pagoService.get().subscribe(result => {
       this.pagos = result;
-    });
+    });*/
   }
 
 }

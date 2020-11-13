@@ -1,7 +1,6 @@
-import { Tercero } from "./tercero";
-
 export class Pago {
-    tercero: Tercero;
+    codigo: number;
+    identificacion: string;
     tipoPago: string;
     fecha: Date;
     valorPago: number;

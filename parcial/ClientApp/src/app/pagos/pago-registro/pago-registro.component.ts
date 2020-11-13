@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { PagoService } from 'src/app/services/pago.service';
+import { TerceroService } from 'src/app/services/tercero.service';
+import { Pago } from '../models/pago';
 
 @Component({
   selector: 'app-pago-registro',
@@ -7,9 +13,74 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagoRegistroComponent implements OnInit {
 
-  constructor() { }
+  formGroup: FormGroup;
+  pago: Pago;
+  searchText: string;
+  identificacion: string;
+  constructor(
+    private pagoService: PagoService,
+    private terceroService: TerceroService,
+    private formBuilder: FormBuilder,
+    private modalService: NgbModal
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.buildForm();
+  }
+
+  private buildForm() {
+    this.pago = new Pago();
+    this.pago.identificacion = '';
+    this.pago.codigo;
+    this.pago.tipoPago = '';
+    this.pago.valorPago;
+    this.pago.valorIva;
+    this.pago.fecha;
+
+    this.formGroup = this.formBuilder.group({
+      identificacion: [this.pago.identificacion, Validators.required],
+      codigo: [this.pago.codigo, Validators.required],
+      tipoPago: [this.pago.tipoPago, Validators.required],
+      fecha: [this.pago.fecha, Validators.required],
+      valorPago: [this.pago.valorPago, [Validators.required, Validators.min(1)]],
+      valorIva: [this.pago.valorIva, [Validators.required, Validators.min(1)]]
+    });
+  }
+
+  get control() {
+    return this.formGroup.controls;
+  }
+
+  onSubmit(){
+    if(this.formGroup.invalid){
+      return;
+    }
+    //this.add();
+  }
+
+  /*add() {
+    this.pago = this.formGroup.value;
+      
+    this.pagoService.post(this.pago).subscribe(p => {
+      if (p != null) {
+        alert('Pago Registrado!');
+        this.pago = p;
+      }
+    });
+  }*/
+
+  consultar(){
+    this.terceroService.verificarExistencia(this.searchText).subscribe(p => {
+      if(p != null){
+        if(p.identificacion == this.searchText) {
+          this.identificacion = p.identificacion;
+        }
+      }else{
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'El tercero no se encuentra en la base de datos, debe Registrarlo';
+      }
+    });
   }
 
 }

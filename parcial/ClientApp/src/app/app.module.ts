@@ -15,6 +15,7 @@ import { PagoConsultaComponent } from './pagos/pago-consulta/pago-consulta.compo
 import { AppRoutingModule } from './app-routing.module';
 import { TerceroService } from './services/tercero.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FetchDataComponent,
     TerceroRegistroComponent,
     PagoRegistroComponent,
-    PagoConsultaComponent
+    PagoConsultaComponent,
+    AlertModalComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -40,6 +42,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     NgbModule
   ],
+  entryComponents:[AlertModalComponent],
   providers: [TerceroService],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { TerceroService } from 'src/app/services/tercero.service';
 import { Tercero } from '../models/tercero';
 
@@ -14,7 +16,8 @@ export class TerceroRegistroComponent implements OnInit {
   tercero: Tercero;
   constructor(
     private terceroService: TerceroService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private modalService: NgbModal
     ) { }
 
   ngOnInit(){

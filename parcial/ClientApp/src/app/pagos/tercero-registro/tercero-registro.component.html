@@ -6,12 +6,17 @@
             <form [formGroup]="formGroup">
                 <div class="form-group">
                     <label>Tipo de Documento</label>
-                    <input type="text" class="form-control" name="tipoDocumento" formControlName="tipoDocumento"
-                    [ngClass]="{ 'is-invalid':  control.tipoDocumento.touched && control.tipoDocumento.errors }">
-                    <div *ngIf=" control.tipoDocumento.errors" class="invalid-feedback">
-                        <div *ngIf="control.tipoDocumento.errors.required">El tipo de Identificacion es requerido</div>
-                    </div>
-                </div> 
+                    <div class="form-inline">
+                        <select id="tipoDocumento" name="tipoDocumento" formControlName="tipoDocumento" class="form-control" [ngClass]="{'is-invalid': control.tipoDocumento.errors && formGroup.get('tipoDocumento').touched}">
+                            <option value="">Seleccione una opcion</option>
+                            <option value="Nit">Nit</option>
+                            <option value="CC">CC</option>
+                          </select>
+                          <div *ngIf="control.tipoDocumento.errors && formGroup.get('tipoDocumento').touched" class="invalid-feedback">
+                            <div *ngIf="control.tipoDocumento.errors.required">El tipo de Identificacion es requerido</div>                        
+                        </div> 
+                    </div>                  
+                </div>
 
                 <div class="form-group">
                     <label>Identificacion</label>

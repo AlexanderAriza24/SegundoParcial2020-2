@@ -16,7 +16,6 @@ export class PagoRegistroComponent implements OnInit {
   formGroup: FormGroup;
   pago: Pago;
   searchText: string;
-  identificacion: string;
   constructor(
     private pagoService: PagoService,
     private terceroService: TerceroService,
@@ -31,7 +30,6 @@ export class PagoRegistroComponent implements OnInit {
   private buildForm() {
     this.pago = new Pago();
     this.pago.identificacion = '';
-    this.pago.codigo;
     this.pago.tipoPago = '';
     this.pago.valorPago;
     this.pago.valorIva;
@@ -39,7 +37,6 @@ export class PagoRegistroComponent implements OnInit {
 
     this.formGroup = this.formBuilder.group({
       identificacion: [this.pago.identificacion, Validators.required],
-      codigo: [this.pago.codigo, Validators.required],
       tipoPago: [this.pago.tipoPago, Validators.required],
       fecha: [this.pago.fecha, Validators.required],
       valorPago: [this.pago.valorPago, [Validators.required, Validators.min(1)]],
@@ -60,7 +57,6 @@ export class PagoRegistroComponent implements OnInit {
 
   add() {
     this.pago = this.formGroup.value;
-      
     this.pagoService.post(this.pago).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)
@@ -75,7 +71,9 @@ export class PagoRegistroComponent implements OnInit {
     this.terceroService.verificarExistencia(this.searchText).subscribe(p => {
       if(p != null){
         if(p.identificacion == this.searchText) {
-          this.identificacion = p.identificacion;
+          const messageBox = this.modalService.open(AlertModalComponent)
+          messageBox.componentInstance.title = "Resultado Operación";
+          messageBox.componentInstance.message = 'El tercero si se encuentra en la base de datos';
         }
       }else{
         const messageBox = this.modalService.open(AlertModalComponent)

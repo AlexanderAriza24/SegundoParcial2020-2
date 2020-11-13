@@ -4,7 +4,7 @@
             <h2>Registro de Pagos</h2>
             <br><br>
         </div>
-        <!--<div class="col-12">
+        <div class="col-12">
             <form class="form-inline">
                 <div class="mx-sm-3">
                     <label>Consultar Tercero</label>
@@ -16,7 +16,7 @@
                     <button class="btn btn-primary mr-1" (click)="consultar()">Consultar</button>
                 </div>
             </form>
-        </div>-->
+        </div>
         <div class="col-md-6 offset-md-3">
             <br><br>
             <form [formGroup]="formGroup">
@@ -26,26 +26,27 @@
                     <input type="text" class="form-control" name="identificacion" formControlName="identificacion"
                     [ngClass]="{ 'is-invalid':  controlPago.identificacion.touched && controlPago.identificacion.errors }" >
                     <div *ngIf=" controlPago.identificacion.errors" class="invalid-feedback">
-                        <div *ngIf="controlPago.identificacion.errors.required">El Codigo es requerido</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Codigo del Pago</label>
-                    <input type="text" class="form-control" name="codigo" formControlName="codigo"
-                    [ngClass]="{ 'is-invalid':  controlPago.codigo.touched && controlPago.codigo.errors }" >
-                    <div *ngIf=" controlPago.codigo.errors" class="invalid-feedback">
-                        <div *ngIf="controlPago.codigo.errors.required">El Codigo es requerido</div>
+                        <div *ngIf="controlPago.identificacion.errors.required">La Identificación es requerida</div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Tipo de Pago</label>
-                    <input type="text" class="form-control" name="tipoPago" formControlName="tipoPago"
-                    [ngClass]="{ 'is-invalid':  controlPago.tipoPago.touched && controlPago.tipoPago.errors }" >
-                    <div *ngIf=" controlPago.tipoPago.errors" class="invalid-feedback">
-                        <div *ngIf="controlPago.tipoPago.errors.required">El Tipo de Pago es requerido</div>
-                    </div>
+                    <div class="form-inline">
+                        <select id="tipoPago" name="tipoPago" formControlName="tipoPago" class="form-control" [ngClass]="{'is-invalid': controlPago.tipoPago.errors && formGroup.get('tipoPago').touched}">
+                            <option value="">Seleccione una Opcion </option>
+                            <option value="Gastos Administrativos">Gastos Administrativos</option>
+                            <option value="Gastos Financieros">Gastos Financieros</option>
+                            <option value="Gastos Legales">Gastos Legales</option>
+                            <option value="Gastos de Viajes y transporte">Gastos de Viajes y transporte</option>
+                            <option value="Honorarios">Honorarios</option>
+                            <option value="Arrendamiento">Arrendamiento</option>
+                            <option value="Impuestos y retenciones">Impuestos y retenciones</option>
+                          </select>
+                          <div *ngIf="controlPago.tipoPago.errors && formGroup.get('tipoPago').touched" class="invalid-feedback">
+                            <div *ngIf="controlPago.tipoPago.errors.required">El Tipo de Pago es requerido</div>                        
+                        </div> 
+                    </div>                  
                 </div>
 
                 <div class="form-group">

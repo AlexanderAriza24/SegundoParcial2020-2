@@ -18,7 +18,8 @@ namespace Logica
         {
             try
             {
-                _context.Pagos.Add(pago);
+                Pago paguito = MapearPago(pago);
+                _context.Pagos.Add(paguito);
                 _context.SaveChanges();
                 return new GuardarPagoResponse(pago);
             }
@@ -32,6 +33,17 @@ namespace Logica
         {
             List<Pago> pagos = _context.Pagos.ToList();
             return pagos;
+        }
+
+        public Pago MapearPago(Pago pago)
+        {
+            Pago prueba = new Pago();
+            prueba.Identificacion = pago.Identificacion;
+            prueba.Fecha = pago.Fecha;
+            prueba.ValorIva = pago.ValorIva;
+            prueba.ValorPago = pago.ValorPago;
+            prueba.TipoPago = pago.TipoPago;
+            return prueba;
         }
     }
 

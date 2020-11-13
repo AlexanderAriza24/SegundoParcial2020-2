@@ -47,7 +47,7 @@ export class PagoRegistroComponent implements OnInit {
     });
   }
 
-  get control() {
+  get controlPago() {
     return this.formGroup.controls;
   }
 
@@ -55,19 +55,21 @@ export class PagoRegistroComponent implements OnInit {
     if(this.formGroup.invalid){
       return;
     }
-    //this.add();
+    this.add();
   }
 
-  /*add() {
+  add() {
     this.pago = this.formGroup.value;
       
     this.pagoService.post(this.pago).subscribe(p => {
       if (p != null) {
-        alert('Pago Registrado!');
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Pago Registrado Exitosamente!!! :-)';
         this.pago = p;
       }
     });
-  }*/
+  }
 
   consultar(){
     this.terceroService.verificarExistencia(this.searchText).subscribe(p => {

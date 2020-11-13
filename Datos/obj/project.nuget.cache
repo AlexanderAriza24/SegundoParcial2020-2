@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "MZG6hrVXrFOW5RAO5LO/rmh7ZzCWamUENeNhpq3CUQbX/hBWsdxEQub8l91N4MR4eQCVsfIsrgyCEtYbapySOw==",
+  "dgSpecHash": "vs99xy53EmSS9ZjVWP6O3NLYbrgfxBbwYbnff3Bn8D06yzhEnmJxfFJSIEMWNYM4XsQq51Hyci+rmUEZdJnqEQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\AlexAC\\Documents\\Ejercicios VS Code\\Proyectos2020-2\\SegundoParcial2020-2\\Datos\\Datos.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

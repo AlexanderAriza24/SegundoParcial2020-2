@@ -11,6 +11,6 @@ namespace Entity
         public DateTime Fecha { get; set; }
         public int ValorPago { get; set; }
         public int ValorIva { get; set; }
-        public Tercero Tercero { get; set; }
+        public string Identificacion { get; set; }
     }
 }

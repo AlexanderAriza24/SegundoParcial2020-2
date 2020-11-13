@@ -1,3 +1,4 @@
+using Datos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace parcial.Controllers
@@ -6,10 +7,10 @@ namespace parcial.Controllers
     [ApiController]
     public class PagoController : ControllerBase
     {
-        private readonly PagoService _pagoService;
+        /*private readonly PagoService _pagoService;
         public PagoController(PagosContext context)
         {
             _pagoService = new PagoService(context);
-        }
+        }*/
     }
 }

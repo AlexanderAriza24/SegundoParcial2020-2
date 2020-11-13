@@ -10,7 +10,7 @@ namespace parcial.Models
         public DateTime Fecha { get; set; }
         public int ValorPago { get; set; }
         public int ValorIva { get; set; }
-        public Tercero Tercero { get; set; }
+        public string Identificacion { get; set; }
     }
 
     public class PagoViewModel : PagoInputModel
@@ -22,7 +22,7 @@ namespace parcial.Models
         public PagoViewModel(Pago pago)
         {
             Codigo = pago.Codigo;
-            Tercero = pago.Tercero;
+            Identificacion = pago.Identificacion;
             TipoPago = pago.TipoPago;
             Fecha = pago.Fecha;
             ValorPago = pago.ValorPago;

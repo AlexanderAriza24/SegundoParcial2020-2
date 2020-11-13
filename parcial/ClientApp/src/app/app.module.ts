@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -14,6 +14,7 @@ import { PagoRegistroComponent } from './pagos/pago-registro/pago-registro.compo
 import { PagoConsultaComponent } from './pagos/pago-consulta/pago-consulta.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TerceroService } from './services/tercero.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TerceroService } from './services/tercero.service';
     PagoConsultaComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
@@ -35,7 +37,8 @@ import { TerceroService } from './services/tercero.service';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [TerceroService],
   bootstrap: [AppComponent]
